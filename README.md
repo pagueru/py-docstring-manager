@@ -1,17 +1,21 @@
-⚠️ Nota: Este arquivo README.md está em construção. Algumas informações podem estar incompletas ou imprecisas no momento, e serão atualizadas conforme o projeto evolui.
+> [!IMPORTANT]  
+> Este arquivo README.md está em construção. Algumas informações podem estar incompletas ou imprecisas no momento, e serão atualizadas conforme o projeto evolui.
 
 # py-docstring-manager
 
-Um utilitário para manipular docstrings em scripts Python, usando arquivos YAML como fonte de mapeamento. Facilita a adição, atualização e remoção de docstrings de forma programática, preservando o formato original do código.
+O `py-docstring-manager` tem como objetivo centralizar o gerenciamento de docstrings em um arquivo YAML, oferecendo uma solução prática para projetos Python com scripts extensos. Ele ajuda a reduzir o tamanho do código durante o desenvolvimento e permite reintroduzir docstrings automaticamente para publicação ou compartilhamento do código com documentação completa.
 
----
+### Principais Benefícios
 
-## **Objetivo**
+- **Vantagens do YAML:** Oferece maior legibilidade, flexibilidade e é ideal para contextos onde a prioridade é a edição manual e intuitiva por humanos.
 
-O objetivo principal do `py-docstring-manager` é auxiliar em cenários onde docstrings precisam ser gerenciadas dinamicamente, como:
-- **Automação da documentação**: Geração ou atualização de docstrings de forma programática.
-- **Padronização em larga escala**: Aplicação de um formato unificado em docstrings de projetos extensos.
-- **Limpeza de código**: Remoção de docstrings desnecessárias ou redundantes.
+- **Redução do tamanho do script:** Remova as docstrings do código para simplificar o trabalho e torná-lo mais legível durante o desenvolvimento.
+
+- **Publicação do código com documentação:** Adicione automaticamente as docstrings de volta ao script quando necessário, como para publicar o código com documentação completa.
+
+- **Preservação do formato:** Garante que a formatação original seja mantida durante as operações.
+
+- **aa:** 
 
 ---
 
@@ -19,46 +23,69 @@ O objetivo principal do `py-docstring-manager` é auxiliar em cenários onde doc
 
 ### 1. **Adicionar Docstrings**
 A função `add_docstrings_from_yaml` permite:
-- Inserir docstrings em funções e classes de um script Python.
-- Substituir docstrings existentes por novos conteúdos definidos em um arquivo YAML.
+- Inserir ou substituir docstrings em funções e classes de um script Python, utilizando os conteúdos definidos em um arquivo YAML.
 
 ### 2. **Remover Docstrings**
-A função `remove_docstrings` oferece:
-- Remoção de docstrings específicas, conforme definido em um arquivo YAML.
-- Remoção de **todas** as docstrings de um script, caso nenhum arquivo YAML seja fornecido.
-
-### 3. **Log de Operações**
-- Ações como adição ou remoção de docstrings são registradas no log para maior visibilidade e controle.
+A função `remove_docstrings` possibilita:
+- Remover docstrings específicas com base no mapeamento de um arquivo YAML.
+- Remover todas as docstrings de um script, caso o arquivo YAML não seja fornecido.
 
 ---
 
-## **Características Técnicas**
+## **Características**
 
-- **Preservação de Formato**: Utiliza a biblioteca `RedBaron` para manipular a árvore de sintaxe abstrata (AST) do código, garantindo que comentários, indentação e formatação original sejam preservados.
-- **Configuração Baseada em YAML**: Um arquivo YAML fornece o mapeamento entre funções/classes e suas respectivas docstrings.
-- **Simples e Extensível**: Projetado para facilitar a integração com outros scripts ou pipelines automatizados.
+- **Preservação de formato:** Utiliza a biblioteca `RedBaron` para manipular a árvore de sintaxe abstrata (AST - Abstract Syntax Tree) do código, garantindo que comentários, indentação e formatação original sejam preservados.
+
+- **Controle centralizado:** O uso de YAML como fonte facilita a edição e atualização de docstrings fora do código.
+
+- **Preservação do formato:** Utiliza RedBaron para manipular a AST (Abstract Syntax Tree), garantindo que a estrutura, os comentários e a formatação do código permaneçam intactos.
 
 ---
 
 ## **Exemplo de Arquivo YAML**
 
-O arquivo YAML usado para adicionar docstrings deve seguir esta estrutura:
+O arquivo YAML utilizado para adicionar docstrings (no exemplo, no estilo Google Style) deve seguir a estrutura abaixo:
 
 ```yaml
 functions:
   function: |
-    Esta é a docstring da função `minha_funcao`.
-    Inclui múltiplas linhas.
+    Faz algo interessante com os números fornecidos.
+
+    Args:
+        x (int): Um número inteiro.
+        y (float): Um número decimal.
+
+    Returns:
+        float: O resultado da soma dos números fornecidos.
+
+    Raises:
+        ValueError: Se `x` for negativo.
 
   other_function: |
-    Docstring para a função `outra_funcao`.
-    Inclui múltiplas linhas.
+    Verifica se uma string é um palíndromo.
 
+    Args:
+        texto (str): A string a ser verificada.
+
+    Returns:
+        bool: True se a string for um palíndromo, False caso contrário.
+    
 classes:
   MyClass: |
-    Docstring da classe `MinhaClasse`.
+    Representa uma entidade com atributos simples.
+
+    Attributes:
+        atributo1 (int): Um atributo inteiro.
+        atributo2 (str): Um atributo textual.
 ```
+
 ## **Exemplo de Uso**
+
+Na pasta `src` do projeto, você encontrará os seguintes arquivos:
+- `docstringmanager.py`: Módulo principal que implementa as funcionalidades do projeto.
+- `docstringmanager.yaml`: Arquivo YAML contendo o mapeamento de docstrings para funções e classes.
+- `sample.py`: Script exemplo com funções e classes, algumas com docstrings e outras sem, para demonstração das operações.
+- `usage_exemples.py`: Script que importa o módulo `docstringmanager.py` e executa exemplos, utilizando o arquivo `docstringmanager.yaml` para manipular docstrings no `sample.py`.
 
 ### Adicionar Docstrings a um Script Python
 
@@ -79,21 +106,10 @@ remove_docstrings('meu_script.py')
 remove_docstrings('meu_script.py', 'docstrings.yaml')
 ```
 
-## **teste**
-
-Clone o repositório e instale as dependências:
+## Estrutura do Projeto
 
 ```bash
-git clone https://github.com/seu-usuario/py-docstring-manager.git
-cd py-docstring-manager
-pip install -r requirements.txt
-```
-
-
-## Estrutura
-
-```bash
-PY-DOCSTRING-MANAGER/
+.
 ├── .venv/
 ├── .vscode/
 │   ├── launch.json
@@ -117,7 +133,6 @@ PY-DOCSTRING-MANAGER/
 ├── pyproject.toml
 └── README.md
 ```
-
 
 # Contato
 
