@@ -186,7 +186,7 @@ As pastas e arquivos abaixo são opcionais no projeto e podem ser utilizadas ou 
 
 GitHub: [pagueru](https://github.com/pagueru/)
 
-LinkedIn: [Raphael Coelho](https://www.linkedin.com/in/raphaelhvcoelho/)
+LinkedIn: [Raphael Coelho](https://www.linkedin.com/in/pagueru/)
 
 E-mail: [raphael.phael@gmail.com](mailto:raphael.phael@gmail.com)
 
