@@ -1,11 +1,9 @@
+# py-docstring-manager
+
 > [!IMPORTANT]  
 > Este arquivo README.md está em construção. Algumas informações podem estar incompletas ou imprecisas no momento, e serão atualizadas conforme o projeto evolui.
 
-# py-docstring-manager
-
 O `py-docstring-manager` tem como objetivo centralizar o gerenciamento de docstrings em um arquivo YAML, oferecendo uma solução prática para projetos Python com scripts extensos. Ele ajuda a reduzir o tamanho do código durante o desenvolvimento e permite reintroduzir docstrings automaticamente para publicação ou compartilhamento do código com documentação completa.
-
-### Principais Benefícios
 
 - **Vantagens do YAML:** Oferece maior legibilidade, flexibilidade e é ideal para contextos onde a prioridade é a edição manual e intuitiva por humanos.
 
@@ -29,17 +27,21 @@ Para utilizar este projeto, recomenda-se o uso do Pyenv para gerenciar versões 
 
 - Para aprender como gerenciar múltiplas versões do Python usando o Pyenv, leia [este artigo](https://realpython.com/intro-to-pyenv/).
 
-
 ## Instalação
 
 ### 1. Clone o repositório
+
 Abra uma janela de terminal com comandos Git e digite:
+
 ```bash
 git clone https://github.com/pagueru/py-docstring-manager.git [NOVO_NOME_DO_PROJETO]
 cd [NOVO_NOME_DO_PROJETO]
 ```
+
 ### 2. Configure o ambiente
+
 O projeto utiliza a versão do Python 3.12.7:
+
 ```bash
 pyenv update
 pyenv install 3.12.7
@@ -47,6 +49,7 @@ pyenv local 3.12.7
 ```
 
 Para inicializar o Poetry no projeto:
+
 ```bash
 poetry env use 3.12.7
 poetry shell
@@ -56,11 +59,15 @@ poetry install --no-root
 ## **Funcionalidades**
 
 ### 1. **Adicionar Docstrings**
+
 A função `add_docstrings_from_yaml` permite:
+
 - Inserir ou substituir docstrings em funções e classes de um script Python, utilizando os conteúdos definidos em um arquivo YAML.
 
 ### 2. **Remover Docstrings**
+
 A função `remove_docstrings` possibilita:
+
 - Remover docstrings específicas com base no mapeamento de um arquivo YAML.
 - Remover todas as docstrings de um script, caso o arquivo YAML não seja fornecido.
 
@@ -116,6 +123,7 @@ classes:
 ## **Exemplo de Uso**
 
 Na pasta `src` do projeto, você encontrará os seguintes arquivos:
+
 - `docstringmanager.py`: Módulo principal que implementa as funcionalidades do projeto.
 - `docstringmanager.yaml`: Arquivo YAML contendo o mapeamento de docstrings para funções e classes.
 - `sample.py`: Script exemplo com funções e classes, algumas com docstrings e outras sem, para demonstração das operações.
@@ -129,6 +137,7 @@ from docstringmanager import add_docstrings_from_yaml
 # Adiciona ou Atualiza as docstrings definidas no YAML
 add_docstrings_from_yaml('meu_script.py', 'docstrings.yaml')
 ```
+
 ### Remover Docstrings de um Script Python
 
 ```python
@@ -173,7 +182,9 @@ A estrutura básica de pastas do projeto após configuração:
 ├── pyproject.toml
 └── README.md
 ```
+
 As pastas e arquivos abaixo são opcionais no projeto e podem ser utilizadas ou removidas conforme a necessidade:
+
 - `.vscode/`: Configurações específicas para o Visual Studio Code.
 - `core/constants.py`: Definições de constantes para caminhos do projeto que podem ser substituídas.
 - `core/logger.py`: Configuração personalizada para geração de logs que pode ser substituíto.
@@ -181,12 +192,10 @@ As pastas e arquivos abaixo são opcionais no projeto e podem ser utilizadas ou 
 - `.pre-commit-config.yaml`: Configurações opcionais para hooks do pre-commit.
 - `CONTRIBUTING.md`: Guia para padronização de commits.
 
-
-# Contato
+## Contato
 
 GitHub: [pagueru](https://github.com/pagueru/)
 
 LinkedIn: [Raphael Coelho](https://www.linkedin.com/in/raphaelhvcoelho/)
 
 E-mail: [raphael.phael@gmail.com](mailto:raphael.phael@gmail.com)
-

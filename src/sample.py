@@ -1,3 +1,5 @@
+# pylint: skip-file
+
 """
 Arquivo de teste para validar as funcionalidades relacionadas à manipulação de docstrings.
 
@@ -10,73 +12,76 @@ Objetivo:
 - Testar o comportamento de scripts que manipulam docstrings em funções e classes.
 """
 
-def function(param1, param2):
+
+def function(param1, param2) -> float:
     """
     Faz algo interessante com os números fornecidos.
-    
+
     Args:
         x (int): Um número inteiro.
         y (float): Um número decimal.
-    
+
     Returns:
         float: O resultado da soma dos números fornecidos.
-    
+
     Raises:
         ValueError: Se `x` for negativo.
     """
-    return
+    return float(param1 + param2)
 
 
-def other_function(paramA):
+def other_function(paramA) -> bool:
     """
     Verifica se uma string é um palíndromo.
-    
+
     Args:
         texto (str): A string a ser verificada.
-    
+
     Returns:
         bool: True se a string for um palíndromo, False caso contrário.
     """
-    return
+    return True
 
 
-def skipped_function(param1, param2):
+def skipped_function(param1, param2) -> None:
     """
     Esta é uma nova docstring que não deve ser modificada
-    
+
     Args:
         arg_1 (str): O primeiro argumento.
         arg_2 (int): O segundo argumento.
-    
+
     Returns:
         None
     """
     return
 
 
-def other_skipped_function(param1, param2):
+def other_skipped_function(param1, param2) -> None:
     return
 
 
 class MyClass:
     """
     Representa uma entidade com atributos simples.
-    
+
     Attributes:
         atributo1 (int): Um atributo inteiro.
         atributo2 (str): Um atributo textual.
     """
+
     pass
 
 
 class SkippedClass:
     """
     Representa outra entidade com atributos simples.
-    
+
     Attributes:
         atributo1 (int): Um atributo inteiro.
         atributo2 (str): Um atributo textual.
     """
+
     pass
 
 
@@ -88,5 +93,5 @@ def main():
     return
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass
