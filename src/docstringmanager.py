@@ -2,7 +2,7 @@
 Funcionalidade para manipular docstrings em scripts Python de forma programática,
 utilizando arquivos YAML como fonte de mapeamento. 
 
-#### Funcionalidades:
+Funcionalidades:
 - Adiciona docstrings a funções e classes com base em um arquivo YAML.
 - Remove docstrings específicas ou todas as docstrings de um script.
 - Preserva o formato original do código, usando `RedBaron` para manipulação segura da AST.

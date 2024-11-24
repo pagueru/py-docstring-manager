@@ -8,34 +8,36 @@ Uso:
     - `3`: Remover todas as docstrings de um script Python.
 """
 
-
-from docstringmanager import add_docstrings_from_yaml, remove_docstrings
 from core.constants import DOCS_YAML_FILE_PATH, SAMPLE_FILE_PATH
 from core.logger import logger
+from docstringmanager import add_docstrings_from_yaml, remove_docstrings
 
 
 def main(chosen_example: int = 1):
+    """Função principal para executar exemplos de uso."""
+
     # Exemplo 1: Adiciona docstrings a um arquivo Python a partir de um arquivo YAML
     if chosen_example == 1:
-        logger.info('Adicionando docstrings...')
+        logger.info("Adicionando docstrings...")
         add_docstrings_from_yaml(SAMPLE_FILE_PATH, DOCS_YAML_FILE_PATH)
-       
-    # Exemplo 2: Remove docstrings de arquivo Python a partir de um arquivo YAML 
+
+    # Exemplo 2: Remove docstrings de arquivo Python a partir de um arquivo YAML
     if chosen_example == 2:
-        logger.info('Removendo docstrings...')
+        logger.info("Removendo docstrings...")
         remove_docstrings(SAMPLE_FILE_PATH, DOCS_YAML_FILE_PATH)
 
     # Exemplo 3: Remove todas as docstrings de um arquivo Python
     if chosen_example == 3:
-        logger.info('Removendo todas as docstrings...')
+        logger.info("Removendo todas as docstrings...")
         remove_docstrings(SAMPLE_FILE_PATH)
 
     # Exibe mensagem de conclusão
     if chosen_example:
-        logger.info('Operações concluídas. Verifique o arquivo atualizado.')
+        logger.info("Operações concluídas. Verifique o arquivo atualizado.")
     else:
-        logger.info('Escolha um exemplo de uso.')
+        logger.info("Escolha um exemplo de uso.")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     # Seleciona o exemplo de uso
     main(1)
