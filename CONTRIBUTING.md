@@ -2,13 +2,14 @@
 
 ## Estrutura básica
 
-<tipo>[escopo opcional]: <descrição curta>
+[tipo](escopo opcional): [descrição curta]
 
 [corpo opcional]
 
 [rodapé opcional]
 
 ## Tipos de commit
+
 - **feat**: Uma nova funcionalidade.
 - **build**: Mudanças que afetam a construção do projeto.
 - **fix**: Uma correção de bug.
@@ -16,6 +17,7 @@
 - **test**: Adição ou ajuste de testes.
 
 ## Exemplos
+
 - `feat: atualiza as funcionalidades do projeto`
 - `build: adiciona a estrutura inicial do projeto`
 - `fix: corrige erro de funcionalidade do projeto`

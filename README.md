@@ -13,49 +13,6 @@ O `py-docstring-manager` tem como objetivo centralizar o gerenciamento de docstr
 
 - **Preservação do formato:** Garante que a formatação original seja mantida durante as operações.
 
----
-
-## Requisitos
-
-- [Python](https://www.python.org/downloads/)
-- [Pyenv](https://pypi.org/project/pyenv/)
-- [Poetry](https://python-poetry.org/)
-
-Para utilizar este projeto, recomenda-se o uso do Pyenv para gerenciar versões do Python e do Poetry para gerenciar as dependências definidas no arquivo `pyproject.toml`.
-
-- Para instalar e configurar o Pyenv e o Poetry no Windows, confira [este vídeo](https://www.youtube.com/watch?v=547Jr26duHQ).
-
-- Para aprender como gerenciar múltiplas versões do Python usando o Pyenv, leia [este artigo](https://realpython.com/intro-to-pyenv/).
-
-## Instalação
-
-### 1. Clone o repositório
-
-Abra uma janela de terminal com comandos Git e digite:
-
-```bash
-git clone https://github.com/pagueru/py-docstring-manager.git [NOVO_NOME_DO_PROJETO]
-cd [NOVO_NOME_DO_PROJETO]
-```
-
-### 2. Configure o ambiente
-
-O projeto utiliza a versão do Python 3.12.7:
-
-```bash
-pyenv update
-pyenv install 3.12.7
-pyenv local 3.12.7
-```
-
-Para inicializar o Poetry no projeto:
-
-```bash
-poetry env use 3.12.7
-poetry shell
-poetry install --no-root
-```
-
 ## **Funcionalidades**
 
 ### 1. **Adicionar Docstrings**
@@ -70,8 +27,6 @@ A função `remove_docstrings` possibilita:
 
 - Remover docstrings específicas com base no mapeamento de um arquivo YAML.
 - Remover todas as docstrings de um script, caso o arquivo YAML não seja fornecido.
-
----
 
 ## **Características**
 
@@ -148,6 +103,46 @@ remove_docstrings('meu_script.py')
 
 # Remove apenas as docstrings definidas no YAML
 remove_docstrings('meu_script.py', 'docstrings.yaml')
+```
+## Requisitos
+
+- [Python](https://www.python.org/downloads/)
+- [Pyenv](https://pypi.org/project/pyenv/)
+- [Poetry](https://python-poetry.org/)
+
+Para utilizar este projeto, recomenda-se o uso do Pyenv para gerenciar versões do Python e do Poetry para gerenciar as dependências definidas no arquivo `pyproject.toml`.
+
+- Para instalar e configurar o Pyenv e o Poetry no Windows, confira [este vídeo](https://www.youtube.com/watch?v=547Jr26duHQ).
+
+- Para aprender como gerenciar múltiplas versões do Python usando o Pyenv, leia [este artigo](https://realpython.com/intro-to-pyenv/).
+
+## Instalação
+
+### 1. Clone o repositório
+
+Abra uma janela de terminal com comandos Git e digite:
+
+```bash
+git clone https://github.com/pagueru/py-docstring-manager.git [NOVO_NOME_DO_PROJETO]
+cd [NOVO_NOME_DO_PROJETO]
+```
+
+### 2. Configure o ambiente
+
+O projeto utiliza a versão do Python 3.12.7:
+
+```bash
+pyenv update
+pyenv install 3.12.7
+pyenv local 3.12.7
+```
+
+Para inicializar o Poetry no projeto:
+
+```bash
+poetry env use 3.12.7
+poetry shell
+poetry install --no-root
 ```
 
 ## Estrutura do Projeto
