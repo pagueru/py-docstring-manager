@@ -36,8 +36,6 @@ A função `remove_docstrings` possibilita:
 
 - **Preservação do formato:** Utiliza RedBaron para manipular a AST (Abstract Syntax Tree), garantindo que a estrutura, os comentários e a formatação do código permaneçam intactos.
 
----
-
 ## **Exemplo de Arquivo YAML**
 
 O arquivo YAML utilizado para adicionar docstrings (no exemplo, no estilo Google Style) deve seguir a estrutura abaixo:
@@ -104,6 +102,7 @@ remove_docstrings('meu_script.py')
 # Remove apenas as docstrings definidas no YAML
 remove_docstrings('meu_script.py', 'docstrings.yaml')
 ```
+
 ## Requisitos
 
 - [Python](https://www.python.org/downloads/)
